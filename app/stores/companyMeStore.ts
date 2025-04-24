@@ -2,13 +2,13 @@ import { defineStore } from "pinia";
 import type { Company } from "~/types/models/company";
 import type { Bonus } from "~/types/models/bonus";
 import type { UsedBonus } from "~/types/responses";
-import type { Volunteer } from "~/types/models/volunteer";
+import type { VolunteerForCompany } from "~/types/models/volunteer";
 
 export const useCompanyMeStore = defineStore("meCompany", () => {
   const _company = ref<Company | null>(null);
   const _companyBonuses = ref<Bonus[]>([]);
   const _companyGivenBonuses = ref<UsedBonus[]>([]);
-  const _companyVolunteers = ref<Volunteer[]>([]);
+  const _companyVolunteers = ref<VolunteerForCompany[]>([]);
 
   const company = computed(() => _company.value);
   const companyBonuses = computed(() => _companyBonuses.value);
@@ -54,7 +54,7 @@ export const useCompanyMeStore = defineStore("meCompany", () => {
 
   const getVolunteers = async (token: string | null) => {
     const cfg = useRuntimeConfig();
-    const { volunteers } = await $fetch<{ volunteers: Volunteer[] }>(
+    const { volunteers } = await $fetch<{ volunteers: VolunteerForCompany[] }>(
       `${cfg.public.apiUrl}/company/volunteers`,
       { headers: { Authorization: token ? `Bearer ${token}` : "" } }
     );

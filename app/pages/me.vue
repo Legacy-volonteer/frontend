@@ -49,7 +49,6 @@
               }"
             />
 
-            <!-- LOADING & ERROR STATES -->
             <div v-else class="text-center py-10 text-green-700">
               Загрузка бонусов…
             </div>
@@ -63,7 +62,6 @@
         </UTabs>
       </UContainer>
 
-      <!-- USER CARD -->
       <UContainer class="w-full md:w-80 flex-shrink-0">
         <UCard
           class="bg-gradient-to-br from-green-400 via-green-500 to-green-600 text-white p-6 rounded-2xl shadow-lg sticky top-20 backdrop-blur"
@@ -101,7 +99,6 @@
         </UCard>
       </UContainer>
 
-      <!-- CONFIRM MODAL -->
       <UModal v-model="isModalOpen" prevent-close>
         <template #content>
           <UCard class="p-6">

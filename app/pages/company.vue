@@ -54,8 +54,8 @@
         >
           <div
             class="absolute inset-0 bg-gradient-to-br from-emerald-400 via-green-500 to-emerald-600"
-          ></div>
-          <div class="absolute inset-0 backdrop-blur-sm bg-white/10"></div>
+          />
+          <div class="absolute inset-0 backdrop-blur-sm bg-white/10"/>
 
           <div class="relative p-6 text-white text-center">
             <div
@@ -68,8 +68,8 @@
 
             <template v-if="isLoadingCompany">
               <div class="animate-pulse space-y-2">
-                <div class="h-4 bg-white/30 rounded"></div>
-                <div class="h-3 bg-white/20 rounded w-5/6 mx-auto"></div>
+                <div class="h-4 bg-white/30 rounded"/>
+                <div class="h-3 bg-white/20 rounded w-5/6 mx-auto"/>
               </div>
             </template>
 
@@ -107,9 +107,7 @@
 
 <script setup lang="ts">
 import type { Bonus } from "~/types/models/bonus";
-import type { Volunteer } from "~/types/models/volunteer";
-
-definePageMeta({ name: "Профиль компании", middleware: ["company-auth"] });
+import type { VolunteerForCompany } from "~/types/models/volunteer";
 
 const companyAuth = useCompanyAuthStore();
 const companyStore = useCompanyMeStore();
@@ -119,7 +117,7 @@ const currentTab = ref<"bonuses" | "history" | "volunteers">("bonuses");
 
 const company = computed(() => companyStore.company);
 const bonuses = computed<Bonus[]>(() => companyStore.companyBonuses ?? []);
-const volunteers = computed<Volunteer[]>(
+const volunteers = computed<VolunteerForCompany[]>(
   () => companyStore.companyVolunteers ?? []
 );
 
@@ -179,10 +177,7 @@ const columnsHistory = [
 ] as const;
 
 const columnsVolunteers = [
-  { accessorKey: "full_name", header: "ФИО" },
-  { accessorKey: "inn", header: "ИНН" },
-  { accessorKey: "email", header: "E-mail" },
-  { accessorKey: "access_level", header: "Уровень доступа" },
+  { accessorKey: "accessKey", header: "Ключ волонтёра" },
 ] as const;
 
 const companyInitials = computed(() => {

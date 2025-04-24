@@ -5,3 +5,7 @@ export interface Volunteer {
   email: string;
   access_level: string;
 }
+
+export interface VolunteerForCompany {
+  confirmation_code: string;
+}

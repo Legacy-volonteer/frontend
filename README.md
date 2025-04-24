@@ -1,28 +1,37 @@
-# Nuxt UI Starter
+# Проект «Волонтёрка» — пошаговый гайд по запуску сайта.
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+> Фронтенд для учёта бонусов волонтёров. Реализация на **Nuxt + Nuxt UI kit**
 
-## Setup
+---
 
-Make sure to install the dependencies:
+## 1. Клонирование и установка
 
 ```bash
-# npm
+git clone https://github.com/Legacy-frontend/frontend.git
+cd frontend
+
+# установка зависимостей
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+# создаём локальную копию переменных окружения
+cp .env.example .env
 ```
 
-## Development Server
+---
 
-Start the development server on `http://localhost:3000`:
+## 2. Настройка окружения
+
+Откройте файл **.env** и задайте url бэкенда:
+
+```dotenv
+API_URL=http://localhost:6969
+```
+
+---
+
+## Сервер для разработки
+
+Запустите сервер разработки по url `http://localhost:3000`:
 
 ```bash
 # npm
@@ -38,9 +47,9 @@ yarn dev
 bun run dev
 ```
 
-## Production
+## Продакшен
 
-Build the application for production:
+Соберите приложение для выпука в продакшен:
 
 ```bash
 # npm
@@ -56,7 +65,7 @@ yarn build
 bun run build
 ```
 
-Locally preview production build:
+Локальный просмотр продакшен билда:
 
 ```bash
 # npm
@@ -72,4 +81,4 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+© 2025 — Legacy Team
