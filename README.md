@@ -7,7 +7,7 @@
 ## 1. Клонирование и установка
 
 ```bash
-git clone https://github.com/Legacy-frontend/frontend.git
+git clone https://github.com/Legacy-volonteer/frontend.git
 cd frontend
 
 # установка зависимостей
